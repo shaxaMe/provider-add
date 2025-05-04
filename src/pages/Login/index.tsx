@@ -1,24 +1,11 @@
 import { useState } from "react";
 import { ILogin } from "@/types/user";
 import supabase from "@/utils/supabase";
-import Layout from "@/layouts/login-layout";
 function Login() {
   const [formData, setFormData] = useState<ILogin>({
     email: null,
     password: null,
   });
-  //    const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
-  //         evt.preventDefault();
-  //        try {
-  //         let response = await supabase.auth.signUp({
-  //             email: formData.email || "",
-  //             password: formData.password||""
-  //         })
-  //         console.log(response);
-  //        } catch (error) {
-
-  //        }
-  //     }
   const loginWithGithub = async () => {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "github",
@@ -33,7 +20,6 @@ function Login() {
   };
   return (
     <>
-      <Layout>
         <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img
@@ -118,7 +104,6 @@ function Login() {
             </p>
           </div>
         </div>
-      </Layout>
     </>
   );
 }

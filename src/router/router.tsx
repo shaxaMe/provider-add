@@ -4,30 +4,37 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
 import Login from "@/pages/Login";
-import App from "@/components/app/App";
+import DefaultLayout from "@/layouts/default";
+import LoginLayout from "@/layouts/login-layout";
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <App />,
+    element: <DefaultLayout />,
     children: [
       {
-        index: true, // "" ga teng (ya'ni "/")
+        index: true,
         element: <Home />,
       },
       {
         path: "about",
         element: <About />,
       },
+    ],
+  },
+  {
+    path: "/login",
+    element: <LoginLayout />,
+    children: [
       {
-        path: "*",
-        element: <NotFound />,
-      },
-      {
-        path: "/login",
+        index: true,
         element: <Login />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ];
 
