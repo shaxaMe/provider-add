@@ -6,18 +6,18 @@ function Login() {
         email:null,
         password:null
     });
-   const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
-        evt.preventDefault();
-       try {
-        let response = await supabase.auth.signUp({
-            email: formData.email || "",
-            password: formData.password||""
-        })
-        console.log(response);
-       } catch (error) {
+//    const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
+//         evt.preventDefault();
+//        try {
+//         let response = await supabase.auth.signUp({
+//             email: formData.email || "",
+//             password: formData.password||""
+//         })
+//         console.log(response);
+//        } catch (error) {
         
-       }
-    }
+//        }
+//     }
     const loginWithGithub = async () => {
         const { data, error } = await supabase.auth.signInWithOAuth({
           provider: 'github',
