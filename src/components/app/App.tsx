@@ -1,7 +1,7 @@
-import RouterConfig from '@/router/routerConfig'
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return <RouterConfig />
+  return <Outlet />
 }
 
 export default App

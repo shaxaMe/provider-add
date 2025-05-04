@@ -1,7 +1,10 @@
 // src/layouts/Layout.tsx
-import { Outlet } from 'react-router-dom'
 import Nav from '@/components/navbar'
-const Layout = () => {
+import { ReactNode } from 'react';
+interface MainLayoutProps {
+    children: ReactNode;
+  }
+const Layout = ({ children}:MainLayoutProps) => {
   return (
     <div>
       <header>
@@ -12,7 +15,7 @@ const Layout = () => {
       </header>
 
       <main>
-        <Outlet /> {/* Bu yerda child routes chiqadi */}
+       {children}
       </main>
     </div>
   )

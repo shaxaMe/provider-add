@@ -1,10 +1,7 @@
 // router/routerConfig.tsx
-import { useRoutes } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import routes from './router'
 
-const RouterConfig = () => {
-  const element = useRoutes(routes)
-  return element
-}
+const router = createBrowserRouter(routes)
 
-export default RouterConfig
+export default router

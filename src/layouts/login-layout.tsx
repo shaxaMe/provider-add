@@ -1,10 +1,24 @@
-import { Outlet } from 'react-router-dom'
-function LoginLayout() {
+// src/layouts/Layout.tsx
+import Nav from '@/components/navbar'
+import { ReactNode } from 'react';
+interface MainLayoutProps {
+    children: ReactNode;
+  }
+const Layout = ({ children}:MainLayoutProps) => {
   return (
     <div>
-       <Outlet />
+      <header>
+        {/* Navbar  */}
+          {/* <Nav /> */}
+        {/* Navbar  */}
+
+      </header>
+
+      <main>
+       {children}
+      </main>
     </div>
   )
 }
 
-export default LoginLayout
+export default Layout
